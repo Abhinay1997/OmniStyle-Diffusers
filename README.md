@@ -1,5 +1,5 @@
 # OmniStyle-Diffusers
-OmniStyle ported to diffusers pipeline
+OmniStyle ported to diffusers pipeline from https://github.com/StyleX-Research/OmniStyle
 
 ## Usage
 
