@@ -25,8 +25,8 @@ def crop_if_not_square(img):
 ## Instruction guided content style edit
 
 output_dir = './'
-content_path = "/assets/bridge.png"
-style_path = "/assets/Pop Art_s0743____0907_01_query_0_img_000176_1683312941806_021301658999063.jpg.jpg"
+content_path = "assets/bridge.png"
+style_path = "assets/Pop Art_s0743____0907_01_query_0_img_000176_1683312941806_021301658999063.jpg.jpg"
 output_filename = os.path.join(output_dir, "test_image_guided_output.jpg")
 
 # Load and preprocess images
