@@ -22,8 +22,19 @@ def crop_if_not_square(img):
     bottom = top + min_dim
     return img.crop((left, top, right, bottom))
 
-## Instruction guided content style edit
 
+## Load the pipeline and OmniStyle LoRA
+from pipeline_omniflux import FluxPipeline
+MODEL_ID = "black-forest-labs/FLUX.1-Dev"
+pipe = FluxPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.bfloat16)
+pipe.load_lora_weights(
+    "StyleXX/OmniStyle",
+    weight_name="dit_lora.safetensors",
+    adapter_name="omni"
+)
+pipe.to("cuda" if torch.cuda.is_available() else "cpu")
+
+## Instruction guided content style edit
 output_dir = './'
 content_path = "assets/bridge.png"
 style_path = "assets/Pop Art_s0743____0907_01_query_0_img_000176_1683312941806_021301658999063.jpg.jpg"
