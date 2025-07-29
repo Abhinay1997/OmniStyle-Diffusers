@@ -24,7 +24,6 @@ def crop_if_not_square(img):
 
 
 ## Load the pipeline and OmniStyle LoRA
-from pipeline_omniflux import FluxPipeline
 MODEL_ID = "black-forest-labs/FLUX.1-Dev"
 pipe = FluxPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.bfloat16)
 pipe.load_lora_weights(
